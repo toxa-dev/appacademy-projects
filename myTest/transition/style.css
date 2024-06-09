@@ -1,0 +1,87 @@
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.box-1 {
+    background-color: aqua;
+    transition-property: background-color;
+    /* background-color; name of the property to animate */
+    transition-delay: 0;
+    /* when to start transition */
+    transition-duration: 2s;
+    /* how long the transition will last */
+    transition-timing-function: ease-in-out;
+    /* how the transition will run (by defining a timing function */
+    ;
+}
+
+.box-2 {
+    background-color: blueviolet;
+    margin: 0 auto;
+    transition: all 1s ease-out;
+}
+
+
+.box-1:hover {
+    background-color: black;
+}
+
+.box-2:hover {
+    width: 500px;
+    height: 500px;
+    transform: rotate(45deg);
+}
+
+.checked-transition {
+    display: none;
+}
+
+.checked-transition+span::before {
+    content: '☐';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transition: content 0.3s ease-in-out;
+}
+
+.checked-transition:checked+span::before {
+    content: '☑';
+}
+
+@keyframes example-animation {
+    0% {
+        transform: rotate(0deg);
+        background-color: blue;
+    }
+
+    25% {
+        transform: rotate(90deg);
+        background-color: cyan;
+        /* Intermediate color */
+    }
+
+    50% {
+        transform: rotate(180deg);
+        background-color: green;
+    }
+
+    75% {
+        transform: rotate(270deg);
+        background-color: yellow;
+        /* Intermediate color */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: blue;
+    }
+}
+
+
+.animation-example {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation: example-animation 4s linear infinite;
+}
